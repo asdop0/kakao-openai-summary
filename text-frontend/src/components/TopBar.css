@@ -1,0 +1,21 @@
+.topbar {
+  display: flex;               /* 가로 정렬 */
+  justify-content: space-between; /* 왼쪽/오른쪽 끝 배치 */
+  align-items: center;         /* 세로 중앙 정렬 */
+  height: 60px;
+  padding: 0 20px;
+  color: white;
+}
+
+.topbar-left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.topbar-right button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
