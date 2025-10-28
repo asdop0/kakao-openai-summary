@@ -51,10 +51,4 @@ public class SummaryController {
     public void deleteSummary(@RequestHeader("X-USER-ID") Long userId, @PathVariable Long id) {
         summaryService.deleteSummary(userService.getUserById(userId), id);
     }
-    
-    // 요약 생성 테스트
-    @PostMapping("/test")
-    public Long createSummaryTest(@RequestHeader("X-USER-ID") Long userId, @RequestBody Map<String, String> requestData) {
-        return summaryService.createSummaryTest(userService.getUserById(userId), requestData.get("originalText"));
-    }
 }
