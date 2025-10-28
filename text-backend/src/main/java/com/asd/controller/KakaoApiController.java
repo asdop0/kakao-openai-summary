@@ -24,22 +24,9 @@ public class KakaoApiController {
 	private final UserService userService;
 	private final JwtTokenProvider jwtTokenProvider;
 	
-	/*
-	private final Map<String, Long> usedCodes = new ConcurrentHashMap<>();
-	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-	*/
-	
 	@PostMapping("/logIn")
 	public ResponseEntity<?> logIn(@RequestBody Map<String, String> requestData) {
 		String code = requestData.get("code");
-		
-		/*
-		if (usedCodes.containsKey(code)) {
-            throw new CodeAlreadyUsedException();
-        }	
-		usedCodes.put(code, System.currentTimeMillis());
-        scheduler.schedule(() -> usedCodes.remove(code), 5, TimeUnit.MINUTES); 
-        */
         
         // 인증 코드 -> 토큰
         User user = kakaoApiService.getAccessToken(code);
