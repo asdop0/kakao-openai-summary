@@ -72,19 +72,4 @@ public class SummaryService {
 			throw new SummaryAccessException();
 		}
 	}
-	
-	// 요약 생성
-	@Transactional
-	public Long createSummaryTest(User user, String originalText) {
-		
-		Summary summary = new Summary();
-		summary.setShortText("테스트용 짧은 요약");
-		summary.setOriginalText(originalText);
-		summary.setSummarizedText("테스트용 자세한 요약");
-		summary.setUser(user);
-		
-		Summary savedSummary = summaryRepository.save(summary);
-		
-		return savedSummary.getId();
-	}
 }
